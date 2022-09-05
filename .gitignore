@@ -1,3 +1,5 @@
+chromedriver_folder/chromedriver
+
 __pycache__/
 *.py[cod]
 *$py.class
