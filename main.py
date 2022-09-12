@@ -2,10 +2,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
 import re
+from logger import logger
 
 KEYWORDS = ['дизайн', 'фото', 'цикл', 'python']
 
 
+@logger
 def find_word_in_paragraph(content, keyword):
     return re.search(keyword, content)
 
@@ -31,4 +33,3 @@ if __name__ == '__main__':
                     show_article = True
         if show_article:
             print(date[0].text, heading[0].text, link[2]['href'])
-
