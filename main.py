@@ -2,12 +2,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
 import re
-from logger import logger
+from logger import parametrized_logger
 
 KEYWORDS = ['дизайн', 'фото', 'цикл', 'python']
 
 
-@logger
+@parametrized_logger(path='log.txt')
 def find_word_in_paragraph(content, keyword):
     return re.search(keyword, content)
 
